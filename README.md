@@ -1,43 +1,68 @@
-# 📡 MikroTik Networking Labs
+# 📘 MikroTik Challenge Labs
 
-This repository contains hands-on MikroTik RouterOS labs aligned with the **MTCNA** certification and real-world network administration skills.
+This repository showcases hands-on MikroTik RouterOS challenge labs focused on real-world networking scenarios. Labs include routing, NAT, firewall configuration, VPN setup, bandwidth control, and remote access — all aligned with industry-relevant skills and MTCNA topics.
 
-All labs are documented with step-by-step configs, topology diagrams, and screenshots for validation and learning.
-
----
-
-## 🔧 Lab Sections
-
-### 🧰 [Introduction & Setup](https://github.com/yourusername/mikrotik-labs-intro)
-Initial configuration, Winbox access, RouterOS upgrades, backup and restore, and identity setup.
-
-### 📶 [Local Network Services](https://github.com/yourusername/mikrotik-labs-local-services)
-DHCP, DNS forwarding, ARP, and bridging configurations.
-
-### 🌐 [Internet & NAT](https://github.com/yourusername/mikrotik-labs-nat-dhcp)
-Masquerade, source NAT, dynamic addressing, and firewall for internet access.
-
-### 🛡 [Firewall & Security](https://github.com/yourusername/mikrotik-labs-firewall)
-Firewall rules, blocking traffic, port forwarding, service security.
-
-### 🧮 [Queues & Bandwidth Management](https://github.com/yourusername/mikrotik-labs-queues)
-Simple queues, hierarchical queues, and bandwidth control policies.
-
-### 🛰 [Routing](https://github.com/yourusername/mikrotik-labs-routing)
-Static routing, OSPF basics, routing marks.
-
-### 🔐 [VPN & Remote Access](https://github.com/yourusername/mikrotik-labs-vpn)
-L2TP/IPSec, PPTP, and remote access via VPN tunnel.
-
-### 🧪 [Monitoring & Tools](https://github.com/yourusername/mikrotik-labs-tools)
-Ping, traceroute, torch, graphs, logs, and connection tracking.
-
-### 📡 [Wireless & VLANs](https://github.com/yourusername/mikrotik-labs-wireless-vlans)
-Wireless configuration, VLAN trunking, VLAN access ports.
+Each lab is fully documented with CLI commands, screenshots (Winbox & PuTTY), and explanations to demonstrate practical skills in MikroTik-based network configurations.
 
 ---
 
-## 🔄 What's Next?
+## 🧪 Featured Labs
 
-- 🧱 [Add New Labs](https://github.com/yourusername/mikrotik-labs-new)
-- 🧑‍💻 Continuous Topology Testing & GNS3 Integration
+### 🔹 [Basic Internet Setup with NAT](https://github.com/yourusername/mikrotik-basic-nat-lab)
+Configure WAN DHCP client, LAN IP, default route, and NAT masquerade for internet access.
+
+### 🔹 [Firewall Rules & Service Protection](https://github.com/yourusername/mikrotik-firewall-lab)
+Implement basic input/output filters, block specific ports, and secure router services.
+
+### 🔹 [Port Forwarding to Internal Server](https://github.com/yourusername/mikrotik-port-forwarding-lab)
+Forward external requests to an internal web or SSH server behind NAT.
+
+### 🔹 [Static Routing Between Two Networks](https://github.com/yourusername/mikrotik-static-routing-lab)
+Create and test static routes for multi-subnet connectivity.
+
+### 🔹 [L2TP/IPSec VPN Remote Access](https://github.com/yourusername/mikrotik-vpn-lab)
+Configure secure remote access via L2TP/IPSec tunnel for offsite users.
+
+### 🔹 [VLAN Trunking & Segmentation](https://github.com/yourusername/mikrotik-vlan-lab)
+Isolate traffic using VLANs with trunk and access port configurations.
+
+### 🔹 [Bandwidth Control Using Queues](https://github.com/yourusername/mikrotik-bandwidth-queue-lab)
+Limit client speeds with simple queues and PCQ configuration.
+
+### 🔹 [SSH & Telnet Access Setup](https://github.com/yourusername/mikrotik-remote-access-lab)
+Enable secure remote access using SSH and Telnet with proper service configs.
+
+---
+
+## 🧰 Tools Used
+
+- **MikroTik RouterOS (CHR)**
+- **Winbox**
+- **PuTTY (Telnet & SSH)**
+- **GNS3** or **VMware Workstation** for simulation
+- **VirtualBox** for virtualized testing
+
+---
+
+## 📝 Lab Format
+
+Each lab includes:
+- ✅ CLI + GUI configuration steps
+- 🖼️ Winbox and PuTTY screenshots
+- 💡 Notes, takeaways, and troubleshooting guides
+
+---
+
+## 🔗 Related Labs
+
+- 🧰 [IT Support & CompTIA Labs »](https://github.com/yourusername/IT-Support-CompTIA-Labs)
+
+---
+
+## 🚀 Coming Soon
+
+- VLAN Routing with DHCP Relay  
+- Firewall Logging & NAT Debugging  
+- Port Knocking for Secure SSH Access  
+
+---
