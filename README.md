@@ -51,6 +51,9 @@ Built VRRP-based virtual gateway system achieving failover convergence in <1 sec
 **Hardened Network Segmentation**  
 Developed stateful firewall filter rules and address lists to enforce strict department isolation. Reduced internal attack surface without impacting line-rate performance.
 
+![Alt Text](https://your-link-to-animated.gif](https://imgur.com/a/Ct7gCp1)
+
+
 ---
 
 ## The Proof: Validation Benchmarks
