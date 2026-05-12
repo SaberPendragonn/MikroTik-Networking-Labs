@@ -1,4 +1,4 @@
-# 🏗️ High-Availability Enterprise Network: VRRP + MSTP Load Balancing
+# High-Availability Enterprise Network: VRRP + MSTP Load Balancing
 ### *My Third Project as a Network Engineer*
 
 > Redundancy isn't an accident—it's architecture.
