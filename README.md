@@ -1,11 +1,11 @@
-# 🚀 High-Availability Enterprise Core: VRRP + MSTP Load Balancing
-### *My Third Project as a Network Engineer*
+# Built Active-Active Enterprise Core with VRRP, MSTP, & DHCP Failover
+### *Deployed Deterministic Traffic Engineering and Multi-Layer Redundancy for Zero-Downtime Infrastructure.*
 
 > Active-Passive is a waste. Every piece of hardware should earn its keep.
 
 ---
 
-## 🗺️ The Topology
+## The Topology
 
 ![Network Topology](https://YOUR-IMAGE-HOST.com/topology.png)
 
@@ -16,7 +16,7 @@
 
 ---
 
-## 🎭 The Lore
+## The Lore
 
 Okay so here's the scenario:
 
@@ -37,7 +37,7 @@ Hardware earns its keep.
 
 ---
 
-## 🛠️ Performance Highlights
+## Performance Highlights
 
 **Deterministic Traffic Engineering**  
 Synchronized MSTP instances with VRRP priorities to steer VLAN 10 (IT) through Core 1 and VLAN 20 (HR) through Core 2. Doubled backplane utilization. Eliminated "hairpin" routing.
@@ -53,7 +53,7 @@ Developed stateful firewall filter rules and address lists to enforce strict dep
 
 ---
 
-## 🧪 The Proof: Validation Benchmarks
+## The Proof: Validation Benchmarks
 
 ### Test 1: The Gateway Transition (VRRP)
 
@@ -95,7 +95,7 @@ Developed stateful firewall filter rules and address lists to enforce strict dep
 
 ---
 
-## 🚧 Engineering Challenges
+## Engineering Challenges
 
 **Core-to-Core Alignment**
 
@@ -111,7 +111,7 @@ With 2,800+ potential hosts across 9 VLANs, I had to ensure the IP addressing wa
 
 ---
 
-## 💡 Final Thoughts
+## Final Thoughts
 
 Modern networks shouldn't have "idle" hardware.
 
@@ -122,14 +122,6 @@ Active-Active is engineering. It forces you to understand how traffic actually f
 **The Metric That Matters: Link Utilization**
 
 I measured which ports were forwarding vs discarding on each MSTI. Standard STP would have left one link completely idle. MSTP gives me 100% utilization of both uplinks.
-
-**Why This Matters to an Employer:**
-
-I don't just build networks that work. I build networks that are optimized for every dollar spent on hardware.
-
-If I'm managing your infrastructure, your "redundant" links won't sit there gathering dust. They'll be pushing traffic. Every switch. Every cable. Every port. All working.
-
-That's the difference between availability and efficiency.
 
 ---
 
