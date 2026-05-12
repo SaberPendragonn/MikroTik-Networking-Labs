@@ -7,7 +7,7 @@
 
 ## The Topology
 
-![Network Topology](https://YOUR-IMAGE-HOST.com/topology.png](https://imgur.com/q7hxYZl)
+![Network Topology](https://i.imgur.com/q7hxYZl.png)
 
 **Core Layer:** Dual MikroTik CCR2116 (L3) with VRRP Gateway Redundancy  
 **Access Layer:** Triple MikroTik CRS Series (L2) with MSTP Path Steering  
