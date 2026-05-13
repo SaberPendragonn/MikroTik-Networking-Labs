@@ -1,7 +1,7 @@
 # Built Active-Active Enterprise Core with VRRP, MSTP, & DHCP Failover
 ### *Deployed Deterministic Traffic Engineering and Multi-Layer Redundancy for Zero-Downtime Infrastructure.*
 
-> Active-Passive is a waste. Every piece of hardware should earn its keep.
+> My First Project
 
 ---
 
@@ -9,8 +9,8 @@
 
 ![Network Topology](https://i.imgur.com/q7hxYZl.png)
 
-**Core Layer:** Dual MikroTik CCR2116 (L3) with VRRP Gateway Redundancy  
-**Access Layer:** Triple MikroTik CRS Series (L2) with MSTP Path Steering  
+**Core Layer:** Dual MikroTik CCR2116 (L3) 
+**Access Layer:** Triple MikroTik CRS Series (L2)  
 **Failover Stack:** DHCP Split-Scope + MSTP + VRRP  
 **Segmentation:** 9-VLAN Enterprise Environment using VLSM (10.10.0.0/22)
 
@@ -20,26 +20,26 @@
 
 Okay so here's the scenario:
 
-Most networks run Active-Passive. One router does all the work. The other sits there collecting dust, waiting for a disaster that might never happen.
-
-That's a waste of hardware.
-
-For this project, I wanted every device to actually **do something**. No idle backups. No wasted bandwidth.
+Most networks run Active-Passive Failover design. One router does all the work. The other sits there collecting dust, waiting for a disaster that might never happen. That's a waste of hardware. For this project, I wanted every device to actually **do something**. No idle backups. No wasted bandwidth.
 
 I engineered an Active-Active infrastructure where:
-- IT traffic flows through Core 1
-- HR traffic flows through Core 2
+1. VLANs 10,30,50,70 gets its primary DHCP pool from Core Router 1, the other half DHCP pool gets it from Core Router 2 in the event that Core Router 1 dies
+2. VLANs 20,40,60,80 gets its primary DHCP pool from Core Router 2, the other half DHCP pool gets it from Core Router 1 in the event that Core Router 2 dies
+3. Each VLANs gets its own VRRP Gateway which acts as a Virtual Router, so in total we have one gateway per VLAN shared by both Core Routers
+4. The VRRP interface created on number 3 acts as the DHCP Server per VLAN as mentioned on number 1 and 2
 - If either dies, the other takes over in under a second
 
-By synchronizing MSTP root bridges with VRRP master roles, I forced traffic to physically steer through different core routers. Doubled my throughput. Kept sub-second failover.
+5. As LACP doesn't do the job for two links which are ongoing from two Core Routers, I used MSTP and segmented the two links
+- Link 1: VLANs 10,30,50,70
+- Link 2: VLANs 20,40,60,80
 
-Hardware earns its keep.
+So every hardware earns its keep!
 
 ---
 
 ## Performance Highlights
 
-**Deterministic Traffic Engineering**  
+**Layer 2 Redundancy**  
 Synchronized MSTP instances with VRRP priorities to steer VLAN 10 (IT) through Core 1 and VLAN 20 (HR) through Core 2. Doubled backplane utilization. Eliminated "hairpin" routing.
 
 **Automated DHCP Failover**  
