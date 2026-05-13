@@ -24,8 +24,11 @@ Most networks run Active-Passive Failover design. One router does all the work. 
 
 I engineered an Active-Active infrastructure where:
 1. VLANs 10,30,50,70 gets its primary DHCP pool from Core Router 1, the other half DHCP pool gets it from Core Router 2 in the event that Core Router 1 dies
+   
 2. VLANs 20,40,60,80 gets its primary DHCP pool from Core Router 2, the other half DHCP pool gets it from Core Router 1 in the event that Core Router 2 dies
+   
 3. Each VLANs gets its own VRRP Gateway which acts as a Virtual Router, so in total we have one gateway per VLAN shared by both Core Routers
+   
 4. The VRRP interface created on number 3 acts as the DHCP Server per VLAN as mentioned on number 1 and 2
 - If either dies, the other takes over in under a second
 
