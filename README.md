@@ -10,6 +10,7 @@
 ![Network Topology](https://i.imgur.com/q7hxYZl.png)
 
 **Core Layer:** Dual MikroTik CCR2116 (L3) 
+
 **Access Layer:** Triple MikroTik CRS Series (L2)  
 **Failover Stack:** DHCP Split-Scope + MSTP + VRRP  
 **Segmentation:** 9-VLAN Enterprise Environment using VLSM (10.10.0.0/22)
@@ -58,11 +59,11 @@ https://github.com/user-attachments/assets/0a27f1f6-234f-4fe4-9e7e-617283c09e23
 
 ---
 
-## The Proof: Validation Benchmarks
+## The Proof
 
 ### Test 1: The Gateway Transition (VRRP)
 
-**What I did:** Force-disabled the active SFP+ uplink on the Master Core.
+**What I did:** Simulated a total hardware crash on Core 1. 
 
 **What happened:** VRRP state transition to Backup Core completed in <800ms. Only one packet dropped during the transition.
 
