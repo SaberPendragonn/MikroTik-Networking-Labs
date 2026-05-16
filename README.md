@@ -44,7 +44,7 @@ So every hardware earns its keep!
 ## Performance Highlights
 
 **Layer 2 Redundancy**  
-Synchronized MSTP instances with VRRP priorities to steer VLAN 10 (IT) through Core 1 and VLAN 20 (HR) through Core 2. Doubled backplane utilization. Eliminated "hairpin" routing.
+Synchronized MSTP instances with VRRP priorities to steer ODD VLANS through Core 1 and EVEN VLANS through Core 2. Eliminated link blocking and allowing failover
 
 **Automated DHCP Failover**  
 Configured split-scope DHCP architecture with reserved pools. Verified 100% lease continuity during total core-router failure scenarios.
@@ -65,7 +65,7 @@ https://github.com/user-attachments/assets/0a27f1f6-234f-4fe4-9e7e-617283c09e23
 
 **What I did:** Simulated a total hardware crash on Core 1. 
 
-**What happened:** VRRP state transition to Backup Core completed in <800ms. Only one packet dropped during the transition.
+**What happened:** VRRP state transition to Backup Core completed in under 800ms. Only one packet dropped during the transition.
 
 ![VRRP Failover](https://YOUR-IMAGE-HOST.com/vrrp-failover.gif)
 
@@ -73,9 +73,9 @@ https://github.com/user-attachments/assets/0a27f1f6-234f-4fe4-9e7e-617283c09e23
 
 ### Test 2: The Lease Continuity (DHCP Failover)
 
-**What I did:** Simulated a total hardware crash on Core 1. Performed client-side IP renewal.
+**What I did:** Simulated a total hardware crash on Core 1.
 
-**What happened:** Client successfully pulled a secondary lease from Core 2's reserved pool in <3 seconds. No network lockout.
+**What happened:** Client successfully pulled a secondary lease from Core 2's reserved pool. No network lockout.
 
 ![DHCP Failover](https://YOUR-IMAGE-HOST.com/dhcp-failover.gif)
 
@@ -83,9 +83,9 @@ https://github.com/user-attachments/assets/0a27f1f6-234f-4fe4-9e7e-617283c09e23
 
 ### Test 3: The Path Steering (MSTP)
 
-**What I did:** Audited Access-SW-1 bridge port states for MSTI 1 and MSTI 2.
+**What I did:** Simulated a physical interface failure on both the redundant links
 
-**What happened:** Forwarding/Discarding states perfectly matched the logical root bridge topology. Zero-loop multi-pathing confirmed.
+**What happened:** Achieved a less than one second failover convergence, only one packet loss!
 
 ![MSTP Port States](https://YOUR-IMAGE-HOST.com/mstp-ports.gif)
 
@@ -93,7 +93,7 @@ https://github.com/user-attachments/assets/0a27f1f6-234f-4fe4-9e7e-617283c09e23
 
 ### Test 4: The Security Layer (Firewall)
 
-**What I did:** Executed cross-VLAN penetration test from VLAN 10 to VLAN 99.
+**What I did:** Executed cross-VLAN penetration test from VLAN 10 to VLAN 20.
 
 **What happened:** 100% drop rate verified via real-time packet counters on the Firewall Filter chain.
 
